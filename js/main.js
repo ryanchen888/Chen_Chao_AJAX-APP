@@ -29,7 +29,7 @@
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
       .then(response => response.json())
       .then(infoBoxes => {
-        console.log(infoBoxes);
+        console.log("Info Boxes:", infoBoxes);
         hotspots.forEach((hotspot, index) => {
           const clone = hotspotTemplate.content.cloneNode(true);
           const hotspotAnnotation = clone.querySelector(".HotspotAnnotation");
@@ -56,7 +56,7 @@
       })
       .catch(error => {
         console.error("Error loading materials:", error);
-        alert("Oops, material loading went wrong. Please try again later.");
+        alert("Page loading went wrong. Try again later, please.");
       })
       .finally(hideLoading);
   }
